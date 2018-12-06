@@ -24,7 +24,7 @@ function fish_prompt
   set_color 0FF
   echo -n '{'"$git_branch"'}'
   set_color FFF
-  echo -n ' $ '
+  echo -n '$ '
 end
 
 # fish
