@@ -16,15 +16,16 @@ end
 
 # show git branch in prompt
 function fish_prompt
+  set -U fish_prompt_pwd_dir_length 0 # full path
   set -l git_branch (git branch ^/dev/null | sed -n '/\* /s///p')
   set_color purple
-  echo -n (whoami)'@'(hostname)':'
+  echo -n (whoami)'@'(hostname)': '
   set_color FF0
   echo -n (prompt_pwd)
   set_color 0FF
-  echo -n '{'"$git_branch"'}'
+  echo -n ' {'"$git_branch"'}'
   set_color FFF
-  echo -n '$ '
+  echo -e '\n$ '
 end
 
 # fish
